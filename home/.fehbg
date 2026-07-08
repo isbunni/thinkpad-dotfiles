@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-fill '/home/breezy/Pictures/wallpapers/kanagawa-wave.jpg' 

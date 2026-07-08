@@ -1,0 +1,23 @@
+format = "$directory[](fg:#585b70) $git_branch$git_status[](bg:#313244 fg:#585b70) $time\n$character"
+
+[character]
+success_symbol = "[❯](bold #89b4fa)"
+error_symbol = "[❯](bold #f38ba8)"
+
+[directory]
+style = "fg:#cdd6f4 bg:#313244"
+format = "[ $path ]($style)"
+
+[git_branch]
+style = "fg:#a6e3a1"
+format = "[$symbol$branch]($style)"
+symbol = " "
+
+[git_status]
+style = "fg:#a6e3a1"
+
+[time]
+disabled = false
+style = "fg:#cdd6f4 bg:#313244"
+format = "[ $time ]($style)"
+time_format = "%H:%M"

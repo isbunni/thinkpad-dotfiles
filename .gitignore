@@ -1,0 +1,23 @@
+# Don't track system-generated config
+.config/mozilla/
+.config/pulse/
+
+# History/cache/dynamic
+**/*.history
+**/*.history.*
+**/.cache/
+**/cache/
+**/CACHEDIR.TAG
+
+# Sensitive
+.config/openweather/config
+.netrc
+.git-credentials
+
+# macOS junk
+.DS_Store
+
+# Editor temp
+*~
+*.swp
+*.swo
