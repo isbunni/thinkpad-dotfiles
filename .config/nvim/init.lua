@@ -7,7 +7,6 @@ require("b.keymaps")       -- all keybindings
 require("b.lazy")          -- bootstrap lazy.nvim + load plugins
 
 -- Load theme
-pcall(require, "b.theme")
 
 -- Greeting
 print("Welcome back, Breezy 🐱")

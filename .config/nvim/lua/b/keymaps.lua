@@ -1,5 +1,5 @@
 -- ══════════════════════════════════════════════════════════════
---  Keybindings
+--  Keybindings — Kanagawa only, no theme switcher
 -- ══════════════════════════════════════════════════════════════
 
 vim.g.mapleader = " "
@@ -35,30 +35,3 @@ end, { desc = "Grep string in project" })
 -- ── LSP / Formatting ───────────────────────────────────────
 map("n", "<leader>F", vim.lsp.buf.format,      { desc = "Format buffer" })
 map("n", "<leader>M", vim.cmd.Mason,           { desc = "Open Mason" })
-
--- ── Theme switcher ─────────────────────────────────────────
-local themes = { "kanagawa", "gruvbox", "onedark", "tokyonight", "catppuccin" }
-local theme_idx = 1
-
-local function apply_theme(name)
-  vim.cmd("colorscheme " .. name)
-  vim.notify("Theme: " .. name, vim.log.levels.INFO, { title = "Theme" })
-end
-
--- Cycle forward / backward through all themes
-map("n", "<leader>tt", function()
-  theme_idx = (theme_idx % #themes) + 1
-  apply_theme(themes[theme_idx])
-end, { desc = "Cycle theme forward" })
-
-map("n", "<leader>ts", function()
-  theme_idx = (theme_idx - 2 + #themes) % #themes + 1
-  apply_theme(themes[theme_idx])
-end, { desc = "Cycle theme backward" })
-
--- Direct jumps: <leader>tk = kanagawa, tg = gruvbox, to = onedark, tn = tokyonight, tc = catppuccin
-for _, t in ipairs(themes) do
-  map("n", "<leader>t" .. t:sub(1, 1), function()
-    apply_theme(t)
-  end, { desc = "Switch to " .. t })
-end
