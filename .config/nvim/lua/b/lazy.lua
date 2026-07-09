@@ -18,6 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Load all plugin specs from lua/b/plugins/*.lua
 require("lazy").setup({
   spec = { { import = "b.plugins" } },
-  install = { colorscheme = { "gruvbox" } }, -- fallback colorscheme during first install
-  checker = { enabled = false },              -- don't auto-check for updates
+  install = { colorscheme = { "kanagawa" } },
+  checker = { enabled = false },
 })
