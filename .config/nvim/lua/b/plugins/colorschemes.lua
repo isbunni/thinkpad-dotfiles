@@ -21,29 +21,18 @@ return {
   },
 
   -- Gruvbox — warm retro groove
-  {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-  },
+  { "ellisonleao/gruvbox.nvim" },
 
   -- OneDark Pro — clean, Atom-inspired
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000,
-  },
+  { "olimorris/onedarkpro.nvim" },
 
   -- Tokyo Night — deep blue, modern
-  {
-    "folke/tokyonight.nvim",
-    priority = 1000,
-    opts = { style = "night" },
-  },
+  { "folke/tokyonight.nvim", opts = { style = "night" } },
 
   -- Catppuccin — pastel, easy on the eyes
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    priority = 1000,
     opts = { flavour = "mocha" },
   },
 }

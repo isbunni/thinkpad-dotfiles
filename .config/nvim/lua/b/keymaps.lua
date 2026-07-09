@@ -37,12 +37,11 @@ map("n", "<leader>F", vim.lsp.buf.format,      { desc = "Format buffer" })
 map("n", "<leader>M", vim.cmd.Mason,           { desc = "Open Mason" })
 
 -- ── Theme switcher ─────────────────────────────────────────
--- Driven by ~/.local/bin/theme — syncs nvim + kitty + starship
 local themes = { "kanagawa", "gruvbox", "onedark", "tokyonight", "catppuccin" }
 local theme_idx = 1
 
 local function apply_theme(name)
-  vim.fn.system({ os.getenv("HOME") .. "/.local/bin/theme", name })
+  vim.cmd("colorscheme " .. name)
   vim.notify("Theme: " .. name, vim.log.levels.INFO, { title = "Theme" })
 end
 
@@ -57,7 +56,7 @@ map("n", "<leader>ts", function()
   apply_theme(themes[theme_idx])
 end, { desc = "Cycle theme backward" })
 
--- Direct jumps: <leader>tg = gruvbox, to = onedark, tn = tokyonight, tc = catppuccin
+-- Direct jumps: <leader>tk = kanagawa, tg = gruvbox, to = onedark, tn = tokyonight, tc = catppuccin
 for _, t in ipairs(themes) do
   map("n", "<leader>t" .. t:sub(1, 1), function()
     apply_theme(t)
