@@ -1,13 +1,9 @@
 -- ══════════════════════════════════════════════════════════════
---  Breezy's Neovim Config — ThinkPad
+--  Telescope — Fuzzy finding for files, git, grep, etc.
 -- ══════════════════════════════════════════════════════════════
 
-require("b.options")       -- vim.opt settings
-require("b.keymaps")       -- all keybindings
-require("b.lazy")          -- bootstrap lazy.nvim + load plugins
-
--- Load theme
-pcall(require, "b.theme")
-
--- Greeting
-print("Welcome back, Breezy 🐱")
+return {
+  "nvim-telescope/telescope.nvim",
+  lazy = false,                           -- Load immediately (used on startup)
+  dependencies = { "nvim-lua/plenary.nvim" }, -- Required utility library
+}
